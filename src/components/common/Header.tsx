@@ -4,7 +4,7 @@ import palette from 'lib/palette';
 
 import Button from 'components/common/Button';
 
-import { ReactComponent as Logo } from 'static/svg/logo.svg';
+import { Logo } from 'static/svg';
 
 const wrapperStyle = css`
   font-size: 2rem;
@@ -29,8 +29,8 @@ function Header() {
   return (
     <div css={wrapperStyle}>
       <div css={headerStyle}>
-        <Logo />
-        <Button>로그인</Button>
+        <Logo.Title />
+        <Button path="/sign_in">로그인</Button>
       </div>
     </div>
   );
