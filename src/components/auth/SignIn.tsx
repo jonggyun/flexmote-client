@@ -14,18 +14,13 @@ const wrapperStyle = css`
 
 const signBoxStyle = css`
   width: 450px;
-  height: 250px;
+  height: 200px;
   border: 1px solid ${palette.grey5};
   padding: 40px 50px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  /* & > a:nth-child(1),
-  & > a:nth-child(2) {
-    margin-bottom: 10px;
-  } */
 `;
 
 const oauthStyle = css`
@@ -58,14 +53,14 @@ function SignIn() {
           <Icon.Google />
           Google Login
         </a>
-        <a href={`${host}/google`} css={oauthStyle} rel="noopener noreferrer">
+        <a href={`${host}/github`} css={oauthStyle} rel="noopener noreferrer">
           <Icon.Github />
           Github Login
         </a>
-        <a href={`${host}/google`} css={oauthStyle} rel="noopener noreferrer">
+        {/* <a href={`${host}/google`} css={oauthStyle} rel="noopener noreferrer">
           <Icon.Facebook />
           Facebook Login
-        </a>
+        </a> */}
       </div>
     </div>
   );
