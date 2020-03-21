@@ -1,8 +1,16 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { useQuery } from '@apollo/react-hooks';
+import gql from 'graphql-tag';
 
 import MainPage from 'pages/MainPage';
 import SignPage from 'pages/SignPage';
+
+const IS_LOGGED_IN = gql`
+  query IsUserLoggedIn {
+    isLoggedIn @client
+  }
+`;
 
 const routes = [
   {
@@ -23,6 +31,8 @@ const routes = [
 ];
 
 function Routes() {
+  const { data } = useQuery(IS_LOGGED_IN);
+  console.log('@@@@@@', data);
   return (
     <BrowserRouter>
       <Switch>
